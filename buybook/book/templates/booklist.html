@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Admin List</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-trash close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    
+                                        <thead>
+                                          <tr>
+                                            <th>ID</th>
+                                            <th>BookName</th>
+                                            <th>BookPrice</th>
+                                            <th>BookLanguage</th>
+                                            <th>BookType</th>
+                                            <th>Publish Date</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image</th>
+                                            <th>Author</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Book Status</th>
+                                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
+                                          </tr>
+                                        </thead>
+                                        {% for item in data1 %}
+                                        <tbody>
+                                        
+                                            <tr>
+                                              <td>{{forloop.counter}}</td>
+                                              <td>{{ item.book_name }}</td>
+                                              <td>{{ item.book_price }}</td>
+                                              <td>{{ item.book_language }}</td>
+                                              <td>{{ item.book_type }}</td>
+                                              <td>{{ item.publish_date }}</td>
+                                              <td>{{ item.book_image }}</td>
+                                              <td>{{ item.book_author }}</td>
+                                              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.book_status }}</td>
+                                              <td><button class="btn waves-effect waves-light btn-primary"><i class="icofont icofont-user-alt-3"></i>Update</button>&nbsp;&nbsp;&nbsp;<button class="btn waves-effect waves-light btn-danger"><i class="icofont icofont-eye-alt"></i>Delete</button></td>
+                                            </tr>
+                                       
+                                        </tbody>
+                                        {% endfor %}    
+                                      </table>
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{{data1}}
+
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Admin List</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-trash close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    
+                                        <thead>
+                                          <tr>
+                                            <th>ID</th>
+                                            <th>Username</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                          </tr>
+                                        </thead>
+                                        {% for item in data1 %}
+                                        <tbody>
+                                        
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                              <td>{{ item.username }}</td>
+                                              <td>{{ item.firstname }}</td>
+                                              <td>{{ item.lastname }}</td>
+                                            </tr>
+                                       
+                                        </tbody>
+                                        {% endfor %}    
+                                      </table>
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}
